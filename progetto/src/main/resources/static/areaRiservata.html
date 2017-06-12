@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Area riservata</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<form action="/logout" method="post">
+		<input type="submit" value="Log out" />
+	</form>
+	<section>
+		<h1>Gestione autori</h1>
+		<form>
+			<input type="button" name="submit" value="Inserimento nuovo autore"
+				onclick="location.href='nuovoAutore'" />
+		</form>
+		<form>
+			<input type="button" name="submit" value="Gestione elenco autori"
+				onclick="location.href='gestisciElencoAutori'" />
+		</form>
+	</section>
+	<section>
+		<h1>Gestione opere</h1>
+		<form>
+			<input type="button" name="submit" value="Inserimento nuova opera"
+				onclick="location.href='scegliAutore'" />
+		</form>
+		<form>
+			<input type="button" name="submit" value="Gestione elenco opere"
+				onclick="location.href='gestisciElencoOpere'" />
+		</form>
+	</section>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Inserisci nuova opera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/nuovaOpera}" th:object="${opera}"
+		method="post">
+		<div>
+			<input type="hidden" th:field="*{id}" />
+			<input type="hidden" th:field="*{autore}" />
+			<div>
+				<span>Titolo: </span> <span><input type="text"
+					th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}">Campo obbligatorio</span>
+			</div>
+			<div>
+				<span>Anno: </span> <span><input type="text"
+					th:field="*{anno}" /></span> <span th:if="${#fields.hasErrors('anno')}">Deve
+					essere un numero</span>
+			</div>
+			<div>
+				<span>Tecnica: </span> <span><input type="text"
+					th:field="*{tecnica}" /></span> <span
+					th:if="${#fields.hasErrors('tecnica')}">Campo obbligatorio</span>
+			</div>
+			<div>
+				<span>Dimensioni: </span> <span><input type="text"
+					th:field="*{dimensioni}" /></span> <span
+					th:if="${#fields.hasErrors('dimensioni')}">Campo obbligatorio</span>
+			</div>
+		</div>
+		<div>
+			<span><button type="submit">Inserisci</button></span>
+		</div>
+		<form>
+			<input type="button" name="submit" value="Torna all'area riservata"
+				onclick="location.href='areaRiservata.html'" />
+		</form>
+	</form>
+</body>
+</html>

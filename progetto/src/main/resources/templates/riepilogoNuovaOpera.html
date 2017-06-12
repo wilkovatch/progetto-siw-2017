@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Riepilogo dati inseriti</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div>
+    	<p th:text="'Titolo: ' + ${opera.titolo}" />
+    </div>
+	<div>
+    	<p th:text="'Anno: ' + ${opera.anno}" />
+    </div>
+	<div>
+    	<p th:text="'tecnica: ' + ${opera.tecnica}" />	
+    </div>
+	<div>
+    	<p th:text="'Dimensioni: ' + ${opera.dimensioni}" />	
+    </div>
+    	<div>
+    	<p th:text="'Autore: ' + ${opera.autore.nome} + ' ' + ${opera.autore.cognome}" />	
+    </div>
+    <form>
+	<input type = "button" name = "submit" value = "Torna all'area riservata" onclick="location.href='areaRiservata.html'" />
+	</form>
+</body>
+</html>

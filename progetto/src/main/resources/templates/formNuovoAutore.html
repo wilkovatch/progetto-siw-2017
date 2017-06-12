@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Inserisci nuovo autore</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/nuovoAutore}" th:object="${autore}"
+		method="post">
+		<div>
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<span>Nome: </span> <span><input type="text"
+					th:field="*{nome}" /></span> <span th:if="${#fields.hasErrors('nome')}">Campo
+					obbligatorio</span>
+			</div>
+			<div>
+				<span>Cognome: </span> <span><input type="text"
+					th:field="*{cognome}" /></span> <span
+					th:if="${#fields.hasErrors('cognome')}">Campo obbligatorio</span>
+			</div>
+			<div>
+				<span>Nazionalità: </span> <span><input type="text"
+					th:field="*{nazionalita}" /></span> <span
+					th:if="${#fields.hasErrors('nazionalita')}">Campo
+					obbligatorio</span>
+			</div>
+			<div>
+				<span>Data di nascita: </span> <span><input type="date"
+					placeholder="GG-MM-AAAA" th:field="*{data_nascita}" /></span> <span
+					th:if="${#fields.hasErrors('data_nascita')}">Formato errato</span>
+			</div>
+			<div>
+				<span>Data di morte (opzionale): </span> <span><input
+					type="date" placeholder="GG-MM-AAAA" th:field="*{data_morte}" /></span> <span
+					th:if="${#fields.hasErrors('data_morte')}">Formato errato</span>
+			</div>
+		</div>
+		<div>
+			<span><button type="submit">Inserisci</button></span>
+		</div>
+		<form>
+			<input type="button" name="submit" value="Torna all'area riservata"
+				onclick="location.href='areaRiservata.html'" />
+		</form>
+	</form>
+</body>
+</html>

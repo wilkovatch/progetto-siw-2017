@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Elenco degli autori</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/sort.js}"></script>
+</head>
+<body>
+	<div th:if="${not #lists.isEmpty(autori)}">
+		<h2>Lista degli autori</h2>
+		<table class="table table-hover" id="myTable">
+		    <thead>
+			<tr>
+				<th onclick="sortTable(0)">Nome</th>
+				<th onclick="sortTable(1)">Cognome</th>
+				<th onclick="sortTable(2)">Nazionalita'</th>
+				<th onclick="sortTable(3)">Data di nascita</th>
+				<th onclick="sortTable(4)">Data di morte</th>
+				<th>Azioni</th>
+			</tr>
+			</thead>
+			<tr th:each="autore : ${autori}">
+				<td th:text="${autore.nome}"></td>
+				<td th:text="${autore.cognome}"></td>
+				<td th:text="${autore.nazionalita}"></td>
+				<td th:text="${autore.data_nascita}"></td>
+				<td th:text="${autore.data_morte}"></td>
+				<td>
+					<form action="#" th:action="@{${postMode}}" method="post">
+						<input id="idAutore" name="idAutore" type="hidden" th:value="${autore.id}" />
+						<button type="submit" th:onClick="${onClickSelect}">
+							<span th:text="${selectText}" />
+						</button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<form>
+		<input type="button" name="submit" value="Torna indietro"
+			th:onclick="${backPage}" />
+	</form>
+
+
+</body>
+</html>
