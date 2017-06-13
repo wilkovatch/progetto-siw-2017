@@ -6,10 +6,10 @@
 </head>
 <body>
 	<form action="#" th:action="@{/nuovaOpera}" th:object="${opera}"
-		method="post">
+		method="post" enctype="multipart/form-data">
 		<div>
-			<input type="hidden" th:field="*{id}" />
-			<input type="hidden" th:field="*{autore}" />
+			<input type="hidden" th:field="*{id}" /> <input type="hidden"
+				th:field="*{autore}" />
 			<div>
 				<span>Titolo: </span> <span><input type="text"
 					th:field="*{titolo}" /></span> <span
@@ -28,11 +28,16 @@
 			<div>
 				<span>Dimensioni: </span> <span><input type="text"
 					th:field="*{dimensioni}" /></span> <span
-					th:if="${#fields.hasErrors('dimensioni')}">Campo obbligatorio</span>
+					th:if="${#fields.hasErrors('dimensioni')}">Campo
+					obbligatorio</span>
 			</div>
+			<tr>
+				<td>Immagine (opzionale, max 300KB, JPEG):</td>
+				<td><input type="file" name="file" /></td>
+			</tr>
 		</div>
 		<div>
-			<span><button type="submit">Inserisci</button></span>
+			<span><button type="submit" id="i_submit">Inserisci</button></span>
 		</div>
 		<form>
 			<input type="button" name="submit" value="Torna all'area riservata"
