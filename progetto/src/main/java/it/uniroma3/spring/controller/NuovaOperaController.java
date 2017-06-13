@@ -19,13 +19,13 @@ import it.uniroma3.spring.service.OperaService;
 public class NuovaOperaController {
 
 	@Autowired
-	private OperaService operaservice;
+	private OperaService operaService;
 	@Autowired
-	private AutoreService autoreservice;
+	private AutoreService autoreService;
 
 	@PostMapping("/scegliAutore")
 	public String mostraForm(@RequestParam("idAutore") long idAutore, Model model, Opera opera) {
-		Autore a = autoreservice.findbyId(idAutore);
+		Autore a = autoreService.findbyId(idAutore);
 		opera.setAutore(a);
 		return "formNuovaOpera";
 	}
@@ -38,7 +38,7 @@ public class NuovaOperaController {
 		} else {
 			model.addAttribute(opera);
 			opera.getAutore().addOpera(opera);
-			operaservice.add(opera);
+			operaService.add(opera);
 		}
 		return "riepilogoNuovaOpera";
 	}

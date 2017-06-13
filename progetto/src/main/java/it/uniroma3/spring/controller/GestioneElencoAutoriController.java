@@ -18,11 +18,11 @@ import it.uniroma3.spring.service.AutoreService;
 @Controller
 public class GestioneElencoAutoriController {
 	@Autowired
-	private AutoreService autoreservice;
+	private AutoreService autoreService;
 	
 	@GetMapping("/visualizzaElencoAutori")
 	public String visualizzaElenco(Model model) {
-	    model.addAttribute("autori", autoreservice.findAll());
+	    model.addAttribute("autori", autoreService.findAll());
 	    model.addAttribute("postMode","/visualizzaOpereAutore");
 	    model.addAttribute("selectText","Lista opere");
 	    model.addAttribute("onClickSelect","");
@@ -32,7 +32,7 @@ public class GestioneElencoAutoriController {
 	
 	@GetMapping("/gestisciElencoAutori")
 	public String gestisciElenco(Model model) {
-	    model.addAttribute("autori", autoreservice.findAll());
+	    model.addAttribute("autori", autoreService.findAll());
 	    model.addAttribute("postMode","/rimuoviAutore");
 	    model.addAttribute("selectText","Rimuovi");
 	    model.addAttribute("onClickSelect","return confirm('Tutte le opere associate verranno rimosse. Procedere?')");
@@ -42,7 +42,7 @@ public class GestioneElencoAutoriController {
 	
 	@GetMapping("/scegliAutore")
 	public String scegliAutore(Model model) {
-	    model.addAttribute("autori", autoreservice.findAll());
+	    model.addAttribute("autori", autoreService.findAll());
 	    model.addAttribute("postMode","/scegliAutore");
 	    model.addAttribute("selectText","Seleziona");
 	    model.addAttribute("onClickSelect","");
@@ -52,7 +52,7 @@ public class GestioneElencoAutoriController {
 	
 	@PostMapping("/rimuoviAutore")
 	public String rimuoviAutore(@RequestParam("idAutore") long idAutore, Model model) {
-	    autoreservice.remove(idAutore);
+	    autoreService.remove(idAutore);
 	    return gestisciElenco(model);
 	}
 }

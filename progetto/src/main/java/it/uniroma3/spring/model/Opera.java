@@ -51,11 +51,11 @@ public class Opera {
 	public String getDimensioni() {
 		return dimensioni;
 	}
-	
+
 	public Autore getAutore(){
 		return autore;
 	}
-	
+
 	public void setTitolo(String titolo) {
 		this.titolo=titolo;
 	}
@@ -71,7 +71,7 @@ public class Opera {
 	public void setDimensioni(String dimensioni) {
 		this.dimensioni=dimensioni;
 	}
-	
+
 	public void setAutore(Autore autore){
 		this.autore=autore;
 	}

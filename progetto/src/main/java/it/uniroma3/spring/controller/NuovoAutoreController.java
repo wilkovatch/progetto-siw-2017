@@ -33,7 +33,7 @@ public class NuovoAutoreController {
 	}
 
 	@Autowired
-	private AutoreService autoreservice;
+	private AutoreService autoreService;
 
 	@GetMapping("/nuovoAutore")
 	public String mostraForm(Autore autore) {
@@ -47,7 +47,7 @@ public class NuovoAutoreController {
 			return "formNuovoAutore";
 		} else {
 			model.addAttribute(autore);
-			autoreservice.add(autore);
+			autoreService.add(autore);
 		}
 		return "riepilogoNuovoAutore";
 	}
