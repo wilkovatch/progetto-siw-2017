@@ -1,9 +1,6 @@
-
-
 body{
 	background-image: url("galleria.JPG");		
 }
-
 
 .thumbnail {
 	
@@ -11,29 +8,26 @@ body{
     margin-right: 0px;
     margin-left: 0px;  
     background-color: #E8BF73; 
+    height: 230px;
 }
 
-.jumbotron  {
-	background-color: #E8BF73;
-	margin-bottom: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;	
-	}
-	
 .btn {
-	font-size: 30px;
-	height: 180px;
-	width: 300px;
+	
 	background-color: #FFF6AE; 
-	margin-bottom: 40px;
-	margin-top: 70px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
-.btn:hover{ 
+.btn:hover{
 	background-color: #E87D20;
 }
 
+#logout {
+	margin-top: 80px;
+	font-size: 30px;
+	background-color: #FFF6AE; 
+}
 
-
-
-
+#logout:hover {
+	background-color: #E87D20;
+}
