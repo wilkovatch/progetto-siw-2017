@@ -26,14 +26,19 @@ body{
 	}
 	
 .btn {
+	font-size: 30px;
+	height: 180px;
+	width: 300px;
 	background-color: #FFF6AE; 
 	margin-bottom: 40px;
-	margin-top: 30px;
+	margin-top: 70px;
 }
 
 .btn:hover{
 	background-color: #E87D20;
 }
+
+
 
 
 
