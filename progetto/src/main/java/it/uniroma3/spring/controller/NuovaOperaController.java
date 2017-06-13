@@ -46,11 +46,6 @@ public class NuovaOperaController {
 		opera.setAutore(a);
 		return "formNuovaOpera";
 	}
-
-	@GetMapping("/nuovaOpera")
-	public String testNuovaOpera(Model model, @Valid @ModelAttribute Opera opera){
-		return "formNuovaOpera";
-	}
 	
 	@PostMapping("/nuovaOpera")
 	public String controllaDatiOpera(@RequestParam("file") MultipartFile file, @Valid @ModelAttribute Opera opera,
