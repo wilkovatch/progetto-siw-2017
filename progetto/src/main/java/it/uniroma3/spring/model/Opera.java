@@ -25,6 +25,8 @@ public class Opera {
 	@NotNull
 	@Size(min = 1)
 	private String dimensioni;
+    @Column(name="immagine")
+    private byte[] immagine;
 	@ManyToOne
 	private Autore autore;
 
@@ -51,11 +53,15 @@ public class Opera {
 	public String getDimensioni() {
 		return dimensioni;
 	}
-
+	
+	public byte[] getImmagine(){
+		return this.immagine;
+	}
+	
 	public Autore getAutore(){
 		return autore;
 	}
-
+	
 	public void setTitolo(String titolo) {
 		this.titolo=titolo;
 	}
@@ -71,7 +77,11 @@ public class Opera {
 	public void setDimensioni(String dimensioni) {
 		this.dimensioni=dimensioni;
 	}
-
+	
+	public void setImmagine(byte[] immagine){
+		this.immagine=immagine;
+	}
+	
 	public void setAutore(Autore autore){
 		this.autore=autore;
 	}

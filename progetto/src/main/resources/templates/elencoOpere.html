@@ -4,7 +4,7 @@
 <meta charset="ISO-8859-1" />
 <title>Elenco delle opere</title>
 
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/sort.js}"></script>
 </head>
@@ -12,30 +12,36 @@
 	<div th:if="${not #lists.isEmpty(opere)}">
 		<h2>Lista delle opere</h2>
 		<table class="table table-hover" id="myTable">
-		    <thead>
-			<tr>
-				<th onclick="sortTable(0)">Titolo</th>
-				<th onclick="sortTable(1)">Anno</th>
-				<th onclick="sortTable(2)">Tecnica</th>
-				<th onclick="sortTable(3)">Dimensioni</th>
-				<th onclick="sortTable(4)">Autore</th>
-				<span th:if="${mostraAzioni}"><th>Azioni</th></span>
-			</tr>
+			<thead>
+				<tr>
+					<th>Immagine</th>
+					<th onclick="sortTable(1)">Titolo</th>
+					<th onclick="sortTable(2)">Anno</th>
+					<th onclick="sortTable(3)">Tecnica</th>
+					<th onclick="sortTable(4)">Dimensioni</th>
+					<th onclick="sortTable(5)">Autore</th>
+					<span th:if="${mostraAzioni}"><th>Azioni</th></span>
+				</tr>
 			</thead>
 			<tr th:each="opera : ${opere}">
+				<td>
+				<span th:if="${opera.immagine != null}"><img th:attr="src=@{'/image/'+${opera.id}}" style="max-width: 200px;" /></span>
+				<span th:if="${opera.immagine == null}">Non disponibile</span>
+				</td>
 				<td th:text="${opera.titolo}"></td>
 				<td th:text="${opera.anno}"></td>
 				<td th:text="${opera.tecnica}"></td>
 				<td th:text="${opera.dimensioni}"></td>
 				<td th:text="${opera.autore.nome}+' '+${opera.autore.cognome}"></td>
 				<span th:if="${mostraAzioni}"><td>
-					<form action="#" th:action="@{${postMode}}" method="post">
-						<input id="idOpera" name="idOpera" type="hidden" th:value="${opera.id}" />
-						<input id="idAutore" name="idAutore" type="hidden" th:value="${opera.autore.id}" />
-						<button type="submit" th:onClick="${onClickSelect}">
-							<span th:text="${selectText}" />
-						</button>
-					</form>
+						<form action="#" th:action="@{${postMode}}" method="post">
+							<input id="idOpera" name="idOpera" type="hidden"
+								th:value="${opera.id}" /> <input id="idAutore" name="idAutore"
+								type="hidden" th:value="${opera.autore.id}" />
+							<button type="submit" th:onClick="${onClickSelect}">
+								<span th:text="${selectText}" />
+							</button>
+						</form>
 				</td></span>
 			</tr>
 		</table>

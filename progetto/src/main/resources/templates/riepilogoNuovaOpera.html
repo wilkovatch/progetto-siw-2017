@@ -6,22 +6,30 @@
 </head>
 <body>
 	<div>
-    	<p th:text="'Titolo: ' + ${opera.titolo}" />
-    </div>
+		<p th:text="'Titolo: ' + ${opera.titolo}" />
+	</div>
 	<div>
-    	<p th:text="'Anno: ' + ${opera.anno}" />
-    </div>
+		<p th:text="'Anno: ' + ${opera.anno}" />
+	</div>
 	<div>
-    	<p th:text="'tecnica: ' + ${opera.tecnica}" />	
-    </div>
+		<p th:text="'tecnica: ' + ${opera.tecnica}" />
+	</div>
 	<div>
-    	<p th:text="'Dimensioni: ' + ${opera.dimensioni}" />	
-    </div>
-    	<div>
-    	<p th:text="'Autore: ' + ${opera.autore.nome} + ' ' + ${opera.autore.cognome}" />	
-    </div>
-    <form>
-	<input type = "button" name = "submit" value = "Torna all'area riservata" onclick="location.href='areaRiservata.html'" />
+		<p th:text="'Dimensioni: ' + ${opera.dimensioni}" />
+	</div>
+	<div>
+		<p
+			th:text="'Autore: ' + ${opera.autore.nome} + ' ' + ${opera.autore.cognome}" />
+	</div>
+	<div>
+	<p>Immagine:
+		<span th:if="${opera.immagine != null}"><img
+			th:attr="src=@{'/image/'+${opera.id}}" style="max-width: 200px;" /></span>
+		<span th:if="${opera.immagine == null}">Non impostata</span>
+	</p></div>
+	<form>
+		<input type="button" name="submit" value="Torna all'area riservata"
+			onclick="location.href='areaRiservata.html'" />
 	</form>
 </body>
 </html>
