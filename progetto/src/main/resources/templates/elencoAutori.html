@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1" />
 <title>Elenco degli autori</title>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/sort.js}"></script>
+<link rel="stylesheet" th:href="@{/css/elencoAutori.css}"  />
+<script th:src="@{/css/elencoAutori.css}"></script>
+ <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
+  <link href="css/elencoAutori.css" rel="stylesheet" media="screen"/> 
+
+
 </head>
 <body>
+
+<nav class="navbar navbar-inverse nav-justified" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Espandi barra di navigazione</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Home</a>    
+  </div>     
+</nav>
+
 	<div th:if="${not #lists.isEmpty(autori)}">
-		<h2>Lista degli autori</h2>
+		<h2><span style="color:white">Lista degli autori</span></h2>
 		<table class="table table-hover" id="myTable">
 		    <thead>
 			<tr>
@@ -32,7 +53,7 @@
 					<form action="#" th:action="@{${postMode}}" method="post">
 						<input id="idAutore" name="idAutore" type="hidden" th:value="${autore.id}" />
 						<button type="submit" th:onClick="${onClickSelect}">
-							<span th:text="${selectText}" />
+							<span  th:text="${selectText}" />
 						</button>
 					</form>
 				</td>
@@ -43,6 +64,10 @@
 		<input type="button" name="submit" value="Torna indietro"
 			th:onclick="${backPage}" />
 	</form>
+	
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 
 </body>

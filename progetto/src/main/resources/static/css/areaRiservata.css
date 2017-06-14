@@ -8,14 +8,14 @@ body{
     margin-right: 0px;
     margin-left: 0px;  
     background-color: #E8BF73; 
-    height: 230px;
+    height: 220px;
 }
 
 .btn {
 	
 	background-color: #FFF6AE; 
 	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
 .btn:hover{

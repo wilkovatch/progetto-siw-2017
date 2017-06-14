@@ -1,0 +1,24 @@
+body{
+	background-image: url("galleria.JPG");		
+}
+
+.table {
+	background-color: #E8BF73;
+}
+
+input {
+	background-color: #FFF6AE;
+}
+
+input:hover {
+	background-color: #E87D20;
+}
+
+
+button{
+	background-color: #FFF6AE
+}
+
+button:hover {
+	background-color: #E87D20;
+}

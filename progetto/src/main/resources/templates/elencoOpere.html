@@ -4,9 +4,15 @@
 <meta charset="ISO-8859-1" />
 <title>Elenco delle opere</title>
 
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/sort.js}"></script>
+<link rel="stylesheet" th:href="@{/css/elencoAutori.css}"  />
+<script th:src="@{/css/elencoAutori.css}"></script>
+ <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
+  <link href="css/elencoAutori.css" rel="stylesheet" media="screen"/> 
 </head>
 <body>
 	<div th:if="${not #lists.isEmpty(opere)}">
@@ -50,7 +56,10 @@
 		<input type="button" name="submit" value="Torna indietro"
 			th:onclick="${backPage}" />
 	</form>
-
-
+	
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
 </body>
 </html>

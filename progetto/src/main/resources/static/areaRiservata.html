@@ -28,14 +28,14 @@
     <div class="thumbnail">
       
        <div class="caption">
-  <h1>Gestione Autori</h1>
+  <h1>Gestione Artisti</h1>
   
  <div class="btn-group btn-group-lg">
 	<input id="artisti-btn" class="btn btn-default " type = "button" name = "submit" 
-	value = "Lista degli artisti" onclick="location.href='visualizzaElencoAutori'" />
+	value = "Inserisci nuovo autore" onclick="location.href='nuovoAutore'" />
 	
 	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit" 
-	value = "Lista delle opere" onclick="location.href='visualizzaElencoOpere'" />
+	value = "Gestione elenco artisti" onclick="location.href='gestisciElencoAutori'" />
   </div>
   
   </div>
@@ -47,11 +47,11 @@
   <h1>Gestione Opere</h1>  
  <div class="btn-group btn-group-lg">
  
-	<input id="artisti-btn" class="btn btn-default " type = "button" name = "submit"
-	 value = "Lista degli artisti" onclick="location.href='visualizzaElencoAutori'" />
+	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit"
+	 value = "Inserisci nuova opera" onclick="location.href='scegliAutore'" />
 	 
 	<input id="opere-btn" class="btn btn-default " type = "button" name = "submit" 
-	value = "Lista delle opere" onclick="location.href='visualizzaElencoOpere'" />
+	value = "Gestione elenco opere" onclick="location.href='gestisciElencoOpere'" />
   </div>
   
   </div>
@@ -62,42 +62,12 @@
   <div class="text-center">
   <div class="btn-group btn-group-xlarge">
   <form action="/logout" method="post">
-		<input id="logout" type="submit" value="Log out" />
+		<input class="btn btn-default" id="logout" type="submit" value="Log out" />
 	</form>	
 	</div>
 </div>
-
-
-
-<!-- 
-	<form action="/logout" method="post">
-		<input type="submit" value="Log out" />
-	</form>
-	<section>
-		<h1>Gestione autori</h1>
-		<form>
-			<input type="button" name="submit" value="Inserimento nuovo autore"
-				onclick="location.href='nuovoAutore'" />
-		</form>
-		<form>
-			<input type="button" name="submit" value="Gestione elenco autori"
-				onclick="location.href='gestisciElencoAutori'" />
-		</form>
-	</section>
-	<section>
-		<h1>Gestione opere</h1>
-		<form>
-			<input type="button" name="submit" value="Inserimento nuova opera"
-				onclick="location.href='scegliAutore'" />
-		</form>
-		<form>
-			<input type="button" name="submit" value="Gestione elenco opere"
-				onclick="location.href='gestisciElencoOpere'" />
-		</form>
-	</section>
-	-->
 	
-	 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="//code.jquery.com/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
