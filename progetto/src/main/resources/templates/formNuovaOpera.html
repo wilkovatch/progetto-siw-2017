@@ -2,9 +2,73 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Inserisci nuova opera</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/inserimento.css" rel="stylesheet" media="screen"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
+<nav class="navbar navbar-inverse nav-justified" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Espandi barra di navigazione</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Home</a>   
+  </div>     
+</nav>
+
+<section>
+        <h1>Gestione opere</h1>
+		<form action="#" th:action="@{/nuovaOpera}" th:object="${opera}"
+		method="post" enctype="multipart/form-data">
+		<div>
+			<input type="hidden" th:field="*{id}" /> <input type="hidden"
+				th:field="*{autore}" />
+			<div>
+				<span>Titolo: </span> <span><input type="text"
+					th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}">Campo obbligatorio</span>
+			</div>
+			<div>
+				<span>Anno: </span> <span><input type="text"
+					th:field="*{anno}" /></span> <span th:if="${#fields.hasErrors('anno')}">Deve
+					essere un numero</span>
+			</div>
+			<div>
+				<span>Tecnica: </span> <span><input type="text"
+					th:field="*{tecnica}" /></span> <span
+					th:if="${#fields.hasErrors('tecnica')}">Campo obbligatorio</span>
+			</div>
+			<div>
+				<span>Dimensioni: </span> <span><input type="text"
+					th:field="*{dimensioni}" /></span> <span
+					th:if="${#fields.hasErrors('dimensioni')}">Campo
+					obbligatorio</span>
+			</div>
+			
+				Immagine (opzionale, max 300KB, JPEG)
+				<input id="scegli" type="file" name="file" />
+			
+		</div>
+		
+		<div class="btn-group btn-group-lg">		
+			<input  class="btn btn-default" type="submit" id="i_submit" value = "Inserisci"/>			
+			<input class="btn btn-default" type="button" name="submit" value="Torna all'area riservata"
+				onclick="location.href='areaRiservata.html'" />	
+		</div>	
+	</form>
+	</section>
+	
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+<!--
 	<form action="#" th:action="@{/nuovaOpera}" th:object="${opera}"
 		method="post" enctype="multipart/form-data">
 		<div>
@@ -44,5 +108,6 @@
 				onclick="location.href='areaRiservata.html'" />
 		</form>
 	</form>
+	-->
 </body>
 </html>

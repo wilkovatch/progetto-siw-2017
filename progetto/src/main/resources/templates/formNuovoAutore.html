@@ -2,10 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Inserisci nuovo autore</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/inserimento.css" rel="stylesheet" media="screen"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<form action="#" th:action="@{/nuovoAutore}" th:object="${autore}"
+
+<nav class="navbar navbar-inverse nav-justified" role="navigation">
+
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Espandi barra di navigazione</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Home</a>   
+  </div>     
+</nav>
+
+<section>
+		<h1>Gestione autori</h1>
+		<form action="#" th:action="@{/nuovoAutore}" th:object="${autore}"
 		method="post">
 		<div>
 			<input type="hidden" th:field="*{id}" />
@@ -36,13 +55,18 @@
 					th:if="${#fields.hasErrors('data_morte')}">Formato errato</span>
 			</div>
 		</div>
-		<div>
-			<span><button type="submit">Inserisci</button></span>
-		</div>
-		<form>
-			<input type="button" name="submit" value="Torna all'area riservata"
-				onclick="location.href='areaRiservata.html'" />
-		</form>
+		
+	<div class="btn-group btn-group-lg">
+	<input  class="btn btn-default" type = "submit" name = "submit" 
+	value = "Inserisci"  /> 
+	<input class="btn btn-default" type="button" name="submit" value="Torna all'area riservata"
+				onclick="location.href='areaRiservata.html'" />		
+  </div>		
 	</form>
+	</section>
+	
+	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
