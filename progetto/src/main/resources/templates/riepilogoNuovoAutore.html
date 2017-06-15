@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Riepilogo dati inseriti</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="css/riepilogo.css" rel="stylesheet" media="screen"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
@@ -18,6 +21,11 @@
   </div>     
 </nav>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">  
+        <div class="thumbnail">   
+
 	<div>
     	<p th:text="'Nome: ' + ${autore.nome}" />
     </div>
@@ -31,10 +39,15 @@
     	<p th:text="'Data di nascita: ' + ${autore.data_nascita}" />	
     </div>
     	<div>
-    	<p th:text="'Data di morte: ' + ${autore.data_morte}" />	
+    	<p  th:text="'Data di morte: ' + ${autore.data_morte}" />	
     </div>
     <form>
-	<input type = "button" name = "submit" value = "Torna all'area riservata" onclick="location.href='areaRiservata.html'" />
+	<input class="btn" type = "button" name = "submit" value = "Torna all'area riservata" onclick="location.href='areaRiservata.html'" />
 	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+	
 </body>
 </html>
