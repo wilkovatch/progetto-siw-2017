@@ -24,7 +24,7 @@ public class GestioneElencoAutoriController {
 	public String visualizzaElenco(Model model) {
 	    model.addAttribute("autori", autoreService.findAll());
 	    model.addAttribute("postMode","/visualizzaOpereAutore");
-	    model.addAttribute("selectText","Lista opere");
+	    model.addAttribute("selectText","Elenco opere");
 	    model.addAttribute("onClickSelect","");
 	    model.addAttribute("backPage","location.href='/'");
 	    return "elencoAutori";

@@ -29,7 +29,7 @@ public class GestioneElencoOpereController {
 	public String visualizzaElenco(Model model) {
 	    model.addAttribute("opere", operaservice.findAll());
 	    model.addAttribute("postMode","/visualizzaOpereAutore");
-	    model.addAttribute("selectText","Lista opere dell'autore");
+	    model.addAttribute("selectText","Elenco opere dell'autore");
 	    model.addAttribute("onClickSelect","");
 	    model.addAttribute("backPage","location.href='/'");
 	    model.addAttribute("mostraAzioni",true);
