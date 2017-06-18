@@ -26,7 +26,7 @@ public class GestioneElencoAutoriController {
 	    model.addAttribute("postMode","/visualizzaOpereAutore");
 	    model.addAttribute("selectText","Elenco opere");
 	    model.addAttribute("onClickSelect","");
-	    model.addAttribute("backPage","location.href='/'");
+	    model.addAttribute("backPage","location.href='index.html'");
 	    return "elencoAutori";
 	}
 	
@@ -36,7 +36,7 @@ public class GestioneElencoAutoriController {
 	    model.addAttribute("postMode","/rimuoviAutore");
 	    model.addAttribute("selectText","Rimuovi");
 	    model.addAttribute("onClickSelect","return confirm('Tutte le opere associate verranno rimosse. Procedere?')");
-	    model.addAttribute("backPage","location.href='/areaRiservata.html'");
+	    model.addAttribute("backPage","location.href='areaRiservata.html'");
 	    return "elencoAutori";
 	}
 	
@@ -46,7 +46,7 @@ public class GestioneElencoAutoriController {
 	    model.addAttribute("postMode","/scegliAutore");
 	    model.addAttribute("selectText","Seleziona");
 	    model.addAttribute("onClickSelect","");
-	    model.addAttribute("backPage","location.href='/areaRiservata.html'");
+	    model.addAttribute("backPage","location.href='areaRiservata.html'");
 	    return "elencoAutori";
 	}
 	

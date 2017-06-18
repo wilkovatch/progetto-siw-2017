@@ -31,7 +31,7 @@ public class GestioneElencoOpereController {
 	    model.addAttribute("postMode","/visualizzaOpereAutore");
 	    model.addAttribute("selectText","Elenco opere dell'autore");
 	    model.addAttribute("onClickSelect","");
-	    model.addAttribute("backPage","location.href='/'");
+	    model.addAttribute("backPage","location.href='index.html'");
 	    model.addAttribute("mostraAzioni",true);
 	    return "elencoOpere";
 	}
@@ -50,15 +50,13 @@ public class GestioneElencoOpereController {
 	    model.addAttribute("postMode","/rimuoviOpera");
 	    model.addAttribute("selectText","Rimuovi");
 	    model.addAttribute("onClickSelect","return confirm('Confermare la rimozione?')");
-	    model.addAttribute("backPage","location.href='/areaRiservata.html'");
+	    model.addAttribute("backPage","location.href='areaRiservata.html'");
 	    model.addAttribute("mostraAzioni",true);
 	    return "elencoOpere";
 	}
 	
 	@PostMapping("/rimuoviOpera")
 	public String rimuoviOpera(@RequestParam("idOpera") long idOpera, Model model) {
-		Opera o = operaservice.findbyId(idOpera);
-		o.getAutore().removeOpera(o);
 	    operaservice.remove(idOpera);
 	    return gestisciElenco(model);
 	}

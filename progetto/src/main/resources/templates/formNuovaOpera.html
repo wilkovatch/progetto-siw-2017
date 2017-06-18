@@ -18,7 +18,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/">Home</a>   
+    <a class="navbar-brand" href="index.html">Home</a>   
   </div>     
 </nav>
 
@@ -53,6 +53,7 @@
 			
 				Immagine (opzionale, max 300KB, JPEG)
 				<input id="scegli" type="file" name="file" />
+				<span th:if="${imgTroppoGrande}">Immagine troppo grande</span>
 			
 		</div>
 		

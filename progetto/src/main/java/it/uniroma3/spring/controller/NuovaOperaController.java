@@ -46,16 +46,18 @@ public class NuovaOperaController {
 		opera.setAutore(a);
 		return "formNuovaOpera";
 	}
-	
+
 	@PostMapping("/nuovaOpera")
 	public String controllaDatiOpera(@RequestParam("file") MultipartFile file, @Valid @ModelAttribute Opera opera,
 			BindingResult bindingResult, Model model) {
-
-		if (bindingResult.hasErrors()) {
+		boolean imgTroppoGrande = false;
+		if (file.getSize() > 300000)
+			imgTroppoGrande = true;
+		model.addAttribute("imgTroppoGrande", imgTroppoGrande);
+		if (bindingResult.hasErrors() || imgTroppoGrande) {
 			return "formNuovaOpera";
 		} else {
 			model.addAttribute(opera);
-			opera.getAutore().addOpera(opera);
 			try {
 				byte[] fileBytes = file.getBytes();
 				if (fileBytes.length > 0)
@@ -76,5 +78,5 @@ public class NuovaOperaController {
 		headers.setContentType(MediaType.IMAGE_JPEG);
 		return new ResponseEntity<byte[]>(imageContent, headers, HttpStatus.OK);
 	}
-	
+
 }
