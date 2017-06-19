@@ -1,0 +1,68 @@
+Caso d'uso UC1: Inserimento nuovo autore - Attore primario: l'amministratore
+Scenario principale di successo:
+1: L'amministratore vuole inserire un nuovo autore.
+2: Dalla Home l'amministratore clicca Area Riservata ed effettua l'accesso con le proprie credeinziali.
+3: L'amministratore clicca su Inserisci nuovo autore.
+4: L'amministratore inserisce i dati dell'autore e conferma l'inserimento.
+5: Il sistema controlla la validità delle informazioni inserite e le registra, quindi mostra un riepilogo.
+Estensioni:
+4a: L'amministratore annulla l'inserimento. Il sistema non registra nessuna informazione sull'autore.
+5a: Il sistema riscontra un'anomalia nei dati inseriti e mostra di nuovo la form di inserimento, segnalando i parametri non validi.
+
+Caso d'uso UC2: Inserimento nuova opera - Attore primario: l'amministratore
+Scenario principale di successo:
+1: L'amministratore vuole inserire una nuova opera.
+2: Dalla Home l'amministratore clicca Area Riservata ed effettua l'accesso con le proprie credenziali.
+3: L'amministratore clicca su Inserisci nuova opera, quindi il sistema mostra l'elenco degli autori presenti nel database.
+4: L'amministratore seleziona l'autore dell'opera da inserire.
+5: L'amministratore inserisce i dati dell'opera e conferma l'inserimento.
+6: Il sistema controlla la validità delle informazioni inserite e le registra, quindi mostra un riepilogo.
+Estensioni:
+4a,5a: L'amministratore annulla l'inserimento. Il sistema non registra nessuna informazione sull'opera.
+6a: Il sistema riscontra un'anomalia nei dati inseriti e mostra di nuovo la form di inserimento, segnalando i parametri non validi.
+
+Caso d'uso UC3: Rimozione autore - Attore primario: l'amministratore
+Scenario principale di successo:
+1: L'amministratore vuole rimuovere un autore dal database
+2: Dalla Home l'amministratore clicca Area Riservata ed effettua l'accesso con le proprie credenziali.
+3: L'amministratore clicca su Gestione elenco autori, quindi il sistema mostra l'elenco degli autori presenti nel database.
+4: L'amministratore seleziona l'autore da rimuovere.
+5: Il sistema chiede conferma della rimozione.
+6: L'amministratore conferma la rimozione, il sistema rimuove dal database l'autore e tutte le opere associate.
+Estensioni:
+4a,5a: L'amministratore annulla la rimozione.
+
+Caso d'uso UC4: Rimozione opera - Attore primario: l'amministratore
+Scenario principale di successo:
+1: L'amministratore vuole rimuovere un'opera dal database
+2: Dalla Home l'amministratore clicca Area Riservata ed effettua l'accesso con le proprie credenziali.
+3: L'amministratore clicca su Gestione elenco opere, quindi il sistema mostra l'elenco delle opere presenti nel database.
+4: L'amministratore seleziona l'opera da rimuovere.
+5: Il sistema chiede conferma della rimozione.
+6: L'amministratore conferma la rimozione, il sistema rimuove dal database l'opera.
+Estensioni:
+4a,5a: L'amministratore annulla la rimozione.
+
+Caso d'uso UC5: Visualizzazione elenco autori - Attore primario: un utente generico
+Scenario principale di successo:
+1: Un utente generico vuole vedere l'elenco degli autori della galleria.
+2: Dalla Home l'utente clicca su Elenco degli autori.
+3: Il sistema mostra l'elenco degli autori presenti nel database.
+
+Caso d'uso UC6: Visualizzazione elenco opere - Attore primario: un utente generico
+Scenario principale di successo:
+1: Un utente generico vuole vedere l'elenco delle opere della galleria.
+2: Dalla Home l'utente clicca su Elenco delle opere.
+3: Il sistema mostra l'elenco delle opere presenti nel database.
+
+Caso d'uso UC7: Visualizzazione elenco opere di un dato autore - Attore primario: un utente generico
+Scenario 1 (dalla lista degli autori):
+1a: Dalla Home l'utente clicca su Elenco degli autori.
+2a: Il sistema mostra l'elenco degli autori presenti nel database.
+3a: L'utente seleziona un'opera.
+4a: Il sistema mostra l'elenco di tutte le opere dell'autore dell'opera selezionata.
+Scenario 2 (dalla lista delle opere):
+1b: Dalla Home l'utente clicca su Elenco delle opere.
+2b: Il sistema mostra l'elenco delle opere presenti nel database.
+3b: L'utente seleziona un autore.
+4b: Il sistema mostra l'elenco di tutte le opere dell'autore selezionato.
